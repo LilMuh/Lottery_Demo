@@ -7,9 +7,36 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView
-  },
+    name: '',
+    component: LayoutView,
+    children:[
+      {
+        path: '',
+        name: 'home',
+        component: HomeView
+      },
+      {
+        path: 'admin',
+        name: 'admin',
+        component: AdminView
+      },
+      {
+        path: 'Essay',
+        name: 'essay',
+        component: EssayView
+      },
+      {
+        path: 'Design',
+        name: 'design',
+        component: HomeView
+      },
+      {
+        path: 'TexasHoldem',
+        name: 'texaspoker',
+        component: TexasView
+      },
+    ]
+  }
 ]
 
 const router = new VueRouter({
